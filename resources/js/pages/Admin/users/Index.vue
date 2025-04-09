@@ -42,7 +42,7 @@ const props = defineProps<{
     },
     filters: Record<string, any>
 }>();
-
+console.log(props)
 const breadcrumbs: BreadcrumbItem[] = [
     { title: 'Управление пользователями', href: '/dashboard/users' },
 ];
@@ -154,6 +154,29 @@ const fetchUsers = () => {
                 </tbody>
             </table>
 
+<!--            <div class="flex justify-center mt-4">-->
+<!--                <template v-for="(link, index) in users.links" :key="index">-->
+<!--                    <Link-->
+<!--                        v-if="link.url"-->
+<!--                        :href="link.url"-->
+<!--                        class="px-3 py-2 mx-1 border rounded text-gray-800 dark:text-white dark:border-gray-600 flex items-center justify-center"-->
+<!--                        :class="{ 'bg-gray-300 dark:bg-gray-600': link.active }"-->
+<!--                    >-->
+<!--                            <ChevronLeft v-if="link.label ==='&amp;laquo; Previous'" />-->
+
+<!--                        <ChevronRight v-else-if="link.label == 'Next &amp;raquo;'" />-->
+<!--                        <span v-else v-html="link.label"></span>-->
+<!--                    </Link>-->
+<!--                    <span-->
+<!--                        v-else-->
+<!--                        class="px-3 py-2 mx-1 border rounded text-gray-500 dark:text-gray-400 flex items-center justify-center"-->
+<!--                    >-->
+<!--                        <ChevronLeft v-if="link.label == '&amp;laquo; Previous'" />-->
+<!--                        <ChevronRight v-else-if="link.label == 'Next &amp;raquo;'" />-->
+<!--                        <span v-else v-html="link.label"></span>-->
+<!--                    </span>-->
+<!--                </template>-->
+<!--            </div>-->
             <div class="flex justify-center mt-4">
                 <template v-for="(link, index) in users.links" :key="index">
                     <Link
@@ -162,16 +185,32 @@ const fetchUsers = () => {
                         class="px-3 py-2 mx-1 border rounded text-gray-800 dark:text-white dark:border-gray-600 flex items-center justify-center"
                         :class="{ 'bg-gray-300 dark:bg-gray-600': link.active }"
                     >
-                        <ChevronLeft v-if="link.label === 'pagination.previous'" />
-                        <ChevronRight v-else-if="link.label === 'pagination.next'" />
+                        <ChevronLeft
+                            v-if="link.label.includes('Previous')"
+                            :size="26"
+                            class="text-current"
+                        />
+                        <ChevronRight
+                            v-else-if="link.label.includes('Next')"
+                            :size="26"
+                            class="text-current"
+                        />
                         <span v-else v-html="link.label"></span>
                     </Link>
                     <span
                         v-else
                         class="px-3 py-2 mx-1 border rounded text-gray-500 dark:text-gray-400 flex items-center justify-center"
                     >
-                        <ChevronLeft v-if="link.label === 'pagination.previous'" />
-                        <ChevronRight v-else-if="link.label === 'pagination.next'" />
+                        <ChevronLeft
+                            v-if="link.label.includes('Previous')"
+                            :size="26"
+                            class="text-current"
+                        />
+                        <ChevronRight
+                            v-else-if="link.label.includes('Next')"
+                            :size="26"
+                            class="text-current"
+                        />
                         <span v-else v-html="link.label"></span>
                     </span>
                 </template>

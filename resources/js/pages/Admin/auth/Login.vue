@@ -89,7 +89,7 @@ const submit = () => {
                 <TextLink :href="route('register')" :tabindex="5">Регистрация</TextLink>
             </div>
             <div class="text-center text-sm text-muted-foreground">
-                <TextLink :href="route('home')" :tabindex="5">Вернуться на главную страницу</TextLink>
+                <TextLink href="" :tabindex="5">Вернуться на главную страницу</TextLink>
             </div>
         </form>
     </AuthBase>

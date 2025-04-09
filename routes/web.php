@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Home', ['title' => 'Главная страница']);
-})->name('home');
+//Route::get('/', function () {
+//    return Inertia::render('Home', ['title' => 'Главная страница']);
+//})->name('home');
 
 // переименовать вход в панель управления, так как '/' будет отображаться главная страница сайта
 Route::get('/enter-to-admin', function () {
