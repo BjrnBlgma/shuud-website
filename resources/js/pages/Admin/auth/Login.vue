@@ -29,7 +29,7 @@ const submit = () => {
 
 <template>
     <AuthBase title="Войдите в ваш аккаунт" description="Введите свой email и пароль ниже, чтобы войти">
-        <Head title="Log in" />
+        <Head title="Вход" />
 
         <div v-if="status" class="mb-4 text-center text-sm font-medium text-green-600">
             {{ status }}
@@ -87,6 +87,9 @@ const submit = () => {
             <div class="text-center text-sm text-muted-foreground">
                 Ещё не зарегистрированы?
                 <TextLink :href="route('register')" :tabindex="5">Регистрация</TextLink>
+            </div>
+            <div class="text-center text-sm text-muted-foreground">
+                <TextLink :href="route('home')" :tabindex="5">Вернуться на главную страницу</TextLink>
             </div>
         </form>
     </AuthBase>

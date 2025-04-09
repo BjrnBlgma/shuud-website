@@ -3,19 +3,26 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// переименовать вход в панель упралвения, так как '/' будет отображаться главная страница сайта
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('Home', ['title' => 'Главная страница']);
 })->name('home');
 
-// переименовать панель упралвения на другое имя, например, /admin
+// переименовать вход в панель управления, так как '/' будет отображаться главная страница сайта
+Route::get('/enter-to-admin', function () {
+    return Inertia::render('Admin/WelcomeAdmin');
+})->name('enter-to-admin');
+
+
 Route::get('/forbidden', function () {
     return Inertia::render('Forbidden');
 })->name('forbidden');
 
-Route::get('dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//Route::get('/{any}', function () {
+//    return Inertia::render('Admin/404');
+//});
+
+
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
+require __DIR__.'/admin.php';
