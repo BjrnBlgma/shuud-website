@@ -1,29 +1,56 @@
 <template>
-    <footer class="site-footer">
+    <footer class="bg-blue-900 text-white">
         <div class="site-footer__content">
             <!-- Колонка с лого и информацией -->
-            <div class="site-footer__col">
-                <img
-                    src="https://i.pinimg.com/736x/a1/6b/a4/a16ba4b39ed3a448a699ce3d2be0c829.jpg"
-                    alt="Логотип Федерации"
-                    class="site-footer__logo"
-                >
-                <p class="site-footer__text">РОО "ФБШ-Т (БТ)"</p>
-                <p class="site-footer__text">Президент - Очиров Дагба Доржибалович</p>
-                <p class="site-footer__text">Вице-президент - Шотхоев Булат Гармаевич</p>
-                <p class="site-footer__text">Исполнительный директор - Дамдинов Дашицырен Балданович</p>
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <img
+                        src="https://i.pinimg.com/736x/a1/6b/a4/a16ba4b39ed3a448a699ce3d2be0c829.jpg"
+                        alt="Логотип Федерации"
+                        class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover"
+                    >
+                    <div>
+                        <h3 class="text-base sm:text-lg font-bold text-white">РОО "ФБШ-Т (БТ)"</h3>
+                        <p class="text-xs sm:text-sm text-blue-200">Федерация Бурятского Шууд-Тенниса</p>
+                    </div>
+                </div>
+
+                <!-- Руководство - скрывается на мобильных -->
+                <div class="hidden sm:block space-y-2 text-sm text-blue-100">
+                    <p><span class="font-medium">Президент:</span> Очиров Дагба Доржибалovich</p>
+                    <p><span class="font-medium">Вице-президент:</span> Шотхоев Булат Гармаевич</p>
+                    <p><span class="font-medium">Исполнительный директор:</span> Дамдинов Дашицырен Балданович</p>
+                </div>
             </div>
 
-            <!-- Колонка с контактами -->
-            <div class="site-footer__col">
-                <h3 class="site-footer__heading">Контакты</h3>
-                <p class="site-footer__text">Адрес: ул. Набережная, д. 17, офис 17, с.Верхняя Иволга, Иволгинский р-н, РБ</p>
-                <p class="site-footer__text">Время работы: Пн-Пт 10:00-18:00</p>
+            <!-- Колонка с контактами - упрощенная на мобильных -->
+            <div class="space-y-4 hidden sm:block">
+                <h3 class="text-base sm:text-lg font-bold text-white">Контакты</h3>
+                <div class="space-y-2 text-sm text-blue-100">
+                    <!-- Полный адрес только на больших экранах -->
+                    <div class="hidden sm:block">
+                        <p>
+                            <span class="font-medium">Адрес:</span><br>
+                            ул. Набережная, д. 17, офис 17<br>
+                            с. Верхняя Иволга, Иволгинский р-н, РБ
+                        </p>
+                        <p><span class="font-medium">Время работы:</span> Пн-Пт 10:00-18:00</p>
+                    </div>
+
+                    <!-- Упрощенная версия для мобильных -->
+
+                    <p>
+                        <span class="font-medium">Email:</span>
+                        <a href="mailto:info@shuud.ru" class="text-blue-300 hover:text-blue-200 transition-colors">
+                            info@shuud.ru
+                        </a>
+                    </p>
+                </div>
             </div>
 
             <!-- Колонка с соцсетями и копирайтом -->
-            <div class="site-footer__col">
-                <h3 class="site-footer__heading">Социальные сети</h3>
+            <div class="space-y-4">
+                <h3 class="text-base sm:text-lg font-bold text-white">Социальные сети</h3>
                 <div class="site-footer__social-links">
                     <a
                         v-for="social in socialLinks"
@@ -40,17 +67,17 @@
                     </a>
                 </div>
 
-                <div class="copyright-section">
-                    <p class="site-footer__copyright">
-                        © 2024 РOO "ФЕДЕРАЦИЯ БУРЯТСКОГО ШУУД-ТЕННИСА (БЫСТРОГО ТЕННИСА)".
-                    </p>
-                    <p class="site-footer__copyright">Все права защищены.</p>
+                <div class="mt-6 space-y-1 text-xs text-blue-200">
+                    <!-- Полный копирайт только на больших экранах -->
+                    <p class="hidden sm:block">© 2024 РОО "ФЕДЕРАЦИЯ БУРЯТСКОГО ШУУД-ТЕННИСА (БЫСТРОГО ТЕННИСА)"</p>
+                    <!-- Сокращенный копирайт на мобильных -->
+                    <p class="sm:hidden">© 2024 РОО "ФБШ-Т (БТ)"</p>
+                    <p>Все права защищены.</p>
                 </div>
             </div>
         </div>
-
         <!-- Блок с логотипом разработчика -->
-        <div class="ulzy-container">
+        <div class="ulzy-container mb-5">
             <svg
                 version="1.0"
                 xmlns="http://www.w3.org/2000/svg"
@@ -231,15 +258,6 @@ const socialLinks = ref([
     --background-color: #F3EFEA;
 }
 
-.site-footer {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--primary-color, #003357);
-    color: white;
-    padding: 2rem 1rem;
-    margin: 0;
-    width: 100%;
-}
-
 .site-footer * {
     box-sizing: border-box;
 }
@@ -250,33 +268,7 @@ const socialLinks = ref([
     max-width: 1200px;
     margin: 0 auto;
     gap: 2rem;
-}
-
-.site-footer__col {
-    flex: 1;
-    min-width: 0;
-}
-
-.site-footer__logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-}
-
-.site-footer__heading {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
-
-.site-footer__text {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
+    padding: 2rem 1rem;
 }
 
 .site-footer__social-links {
@@ -298,13 +290,6 @@ const socialLinks = ref([
     width: 30px;
     height: 30px;
     border-radius: 30%;
-}
-
-.site-footer__copyright {
-    color: white;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
 }
 
 .ulzy-container {
@@ -345,34 +330,20 @@ const socialLinks = ref([
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 2rem;
-    }
-
-    .site-footer__col {
-        width: 100%;
-        margin: 0;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
     }
 
     .site-footer__social-links {
         justify-content: center;
     }
-
-    .site-footer__logo {
-        margin: 0 auto 1rem;
-    }
 }
 
+/* Дополнительная адаптивность для очень маленьких экранов */
 @media (max-width: 480px) {
-    .site-footer {
-        padding: 1.5rem 0.5rem;
-    }
-
-    .site-footer__heading {
-        font-size: 1.1rem;
-    }
-
-    .site-footer__text {
-        font-size: 0.9rem;
+    .site-footer__content {
+        gap: 1rem;
+        padding: 1rem 0.5rem;
     }
 }
 </style>

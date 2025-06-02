@@ -1,29 +1,49 @@
 <template>
-    <footer class="site-footer">
+    <footer class="bg-blue-900 text-white">
         <div class="site-footer__content">
             <!-- Колонка с лого и информацией -->
-            <div class="site-footer__col">
-                <img
-                    src="https://i.pinimg.com/736x/a1/6b/a4/a16ba4b39ed3a448a699ce3d2be0c829.jpg"
-                    alt="Логотип Федерации"
-                    class="site-footer__logo"
-                >
-                <p class="site-footer__text">РОО "ФБШ-Т (БТ)"</p>
-                <p class="site-footer__text">Президент - Очиров Дагба Доржибалович</p>
-                <p class="site-footer__text">Вице-президент - Шотхоев Булат Гармаевич</p>
-                <p class="site-footer__text">Исполнительный директор - Дамдинов Дашицырен Балданович</p>
+            <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                    <img
+                        src="https://i.pinimg.com/736x/a1/6b/a4/a16ba4b39ed3a448a699ce3d2be0c829.jpg"
+                        alt="Логотип Федерации"
+                        class="w-16 h-16 rounded-full object-cover"
+                    >
+                    <div>
+                        <h3 class="text-lg font-bold text-white">РОО "ФБШ-Т (БТ)"</h3>
+                        <p class="text-sm text-blue-200">Федерация Бурятского Шууд-Тенниса</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2 text-sm text-blue-100">
+                    <p><span class="font-medium">Президент:</span> Очиров Дагба Доржибалович</p>
+                    <p><span class="font-medium">Вице-президент:</span> Шотхоев Булат Гармаевич</p>
+                    <p><span class="font-medium">Исполнительный директор:</span> Дамдинов Дашицырен Балданович</p>
+                </div>
             </div>
 
             <!-- Колонка с контактами -->
-            <div class="site-footer__col">
-                <h3 class="site-footer__heading">Контакты</h3>
-                <p class="site-footer__text">Адрес: ул. Набережная, д. 17, офис 17, с.Верхняя Иволга, Иволгинский р-н, РБ</p>
-                <p class="site-footer__text">Время работы: Пн-Пт 10:00-18:00</p>
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold text-white">Контакты</h3>
+                <div class="space-y-2 text-sm text-blue-100">
+                    <p>
+                        <span class="font-medium">Адрес:</span><br>
+                        ул. Набережная, д. 17, офис 17<br>
+                        с. Верхняя Иволга, Иволгинский р-н, РБ
+                    </p>
+                    <p><span class="font-medium">Время работы:</span> Пн-Пт 10:00-18:00</p>
+                    <p>
+                        <span class="font-medium">Email:</span>
+                        <a href="mailto:info@shuud.ru" class="text-blue-300 hover:text-blue-200 transition-colors">
+                            info@shuud.ru
+                        </a>
+                    </p>
+                </div>
             </div>
 
             <!-- Колонка с соцсетями и копирайтом -->
-            <div class="site-footer__col">
-                <h3 class="site-footer__heading">Социальные сети</h3>
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold text-white">Социальные сети</h3>
                 <div class="site-footer__social-links">
                     <a
                         v-for="social in socialLinks"
@@ -40,11 +60,9 @@
                     </a>
                 </div>
 
-                <div class="copyright-section">
-                    <p class="site-footer__copyright">
-                        © 2024 РOO "ФЕДЕРАЦИЯ БУРЯТСКОГО ШУУД-ТЕННИСА (БЫСТРОГО ТЕННИСА)".
-                    </p>
-                    <p class="site-footer__copyright">Все права защищены.</p>
+                <div class="mt-6 space-y-1 text-xs text-blue-200">
+                    <p>© 2024 РОО "ФЕДЕРАЦИЯ БУРЯТСКОГО ШУУД-ТЕННИСА (БЫСТРОГО ТЕННИСА)"</p>
+                    <p>Все права защищены.</p>
                 </div>
             </div>
         </div>
