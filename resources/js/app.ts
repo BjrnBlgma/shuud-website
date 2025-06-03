@@ -8,7 +8,9 @@ import { ZiggyVue } from 'ziggy-js';
 import { initializeTheme } from './composables/useAppearance';
 import { createPinia } from 'pinia';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+// @ts-ignore
 import GuestLayout from './App.vue';
+// @ts-ignore
 import SimpleLayout from "@/layouts/SimpleLayout.vue";
 
 

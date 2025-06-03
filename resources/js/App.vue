@@ -2,7 +2,7 @@
     <div class="min-h-screen flex flex-col">
         <Head>
             <title>{{ title }}</title>
-            <link rel="icon" type="image/x-icon" href="">
+            <link rel="icon" type="image/x-icon" href="/favicon.svg">
         </Head>
 
         <!-- Header - всегда наверху -->

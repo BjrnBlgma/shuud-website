@@ -1,11 +1,10 @@
 <?php
 
+use App\Http\Controllers\web\HomeController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Home', ['title' => 'Федерация Бурятского Шууд-Тенниса (Быстрого тенниса)']);
-})->name('home');
+Route::get('/', [HomeController::class, 'showMainPage'])->name('home');
 
 // переименовать вход в панель управления, так как '/' будет отображаться главная страница сайта
 Route::get('/enter-to-admin', function () {
@@ -14,7 +13,7 @@ Route::get('/enter-to-admin', function () {
 
 
 Route::get('/forbidden', function () {
-    return Inertia::render('Forbidden');
+    return Inertia::render('Admin/Forbidden');
 })->name('forbidden');
 
 //Route::get('/{any}', function () {
