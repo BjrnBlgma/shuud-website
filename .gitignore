@@ -23,3 +23,4 @@ yarn-error.log
 /.vscode
 /.zed
 /docker
+/resources/test/2025_04_30_115332_create_TEST_table.php
