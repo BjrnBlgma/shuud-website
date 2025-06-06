@@ -17,6 +17,3 @@ Route::middleware(['auth', 'verified', 'admin'])->prefix('dashboard')->name('das
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 });
 
-Route::middleware(['auth', 'verified', 'admin_or_support'])->group(function () {
-    // роуты для админа и поддержки
-});

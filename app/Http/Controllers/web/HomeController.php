@@ -4,12 +4,12 @@ namespace App\Http\Controllers\web;
 
 use App\Http\Controllers\Controller;
 use Inertia\Inertia;
+use Inertia\Response;
 
 class HomeController  extends Controller
 {
-    public function showMainPage()
+    public function showMainPage(): Response
     {
-        // Получаем последние 6 новостей
 //        $news = Post::with(['postFile.file'])
 //            ->where('published', true) // если есть поле published
 //            ->orderBy('created_at', 'desc')
@@ -33,7 +33,7 @@ class HomeController  extends Controller
 //                ];
 //            });
 
-        // Получаем спонсоров
+
 //        $sponsors = Sponsor::where('active', true) // если есть поле active
 //        ->orderBy('order', 'asc') // если есть поле для сортировки
 //        ->get()
