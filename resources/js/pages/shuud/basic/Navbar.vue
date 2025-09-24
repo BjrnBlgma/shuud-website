@@ -171,7 +171,7 @@
                         <!-- Auth mobile -->
                         <div class="border-t border-blue-800 pt-3 mt-3">
                             <div v-if="!user">
-                                <Link href="/login" class="mobile-nav-link">
+                                <Link :href="route('login')" class="mobile-nav-link">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                         <path clip-rule="evenodd" d="M15 13H3V11H15V13Z" fill-rule="evenodd"/>
                                         <path clip-rule="evenodd" d="M12.2072 7.79291L15.7072 11.2929C16.0977 11.6834 16.0977 12.3166 15.7072 12.7071L12.2072 16.2071L10.793 14.7929L13.5859 12L10.793 9.20712L12.2072 7.79291Z" fill-rule="evenodd"/>
@@ -319,11 +319,11 @@ onUnmounted(() => {
 
 <style scoped>
 .nav-link {
-    @apply inline-flex items-center px-3 py-2 text-[20px] font-medium text-white rounded-lg hover:text-blue-300 hover:bg-blue-800 transition-all duration-200;
+    @apply inline-flex items-center text-[18px] font-medium text-white rounded-lg hover:text-blue-300 hover:bg-blue-800 transition-all duration-200;
 }
 
 .auth-link {
-    @apply inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-all duration-200;
+    @apply inline-flex items-center px-3 py-1.5 text-sm font-medium text-white bg-blue-800 rounded-lg hover:bg-blue-700 transition-all duration-200;
 }
 
 .dropdown-link {

@@ -328,18 +328,60 @@ body {
     border-radius: 10px;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    @media (max-width: 576px) {
+        width: 50%;
+        top: 70%;
+        height: 50%;
+        left: 30%;
+    }
+    @media (max-width: 768px) {
+        width: 40%;
+        top: 70%;
+        height: 50%;
+        left: 25%;
+    }
+    @media (max-width: 1000px) {
+        width: 40%;
+        top: 70%;
+        height: 50%;
+        left: 25%;
+    }
 }
 
 .transparent-box h6 {
     font-size: 1.4rem;
     margin-bottom: 15px;
     font-weight: bold;
+    @media (max-width: 991px) {
+        font-size: 1.1rem;
+    }
+    @media (max-width: 780px) {
+        font-size: 1rem;
+    }
+    @media (max-width: 400px) {
+        font-size: 14px;
+    }
+    @media (max-width: 350px) {
+        font-size: 1px;
+    }
 }
 
 .transparent-box p {
     font-size: 1em;
     margin-bottom: 4px;
     opacity: 0.9;
+    @media (max-width: 991px) {
+        font-size: 16px;
+    }
+    @media (max-width: 780px) {
+        font-size: 14px;
+    }
+    @media (max-width: 400px) {
+        font-size: 12px;
+    }
+    @media (max-width: 350px) {
+        font-size: 11px;
+    }
 }
 
 .carousel-indicators button {
@@ -672,11 +714,6 @@ body {
         gap: 1.5rem;
     }
 
-    .transparent-box {
-        width: 80%;
-        padding: 15px;
-    }
-
     .news-section,
     .sponsors-section {
         padding: 2rem 0;
@@ -684,11 +721,6 @@ body {
 }
 
 @media (max-width: 576px) {
-    .transparent-box {
-        width: 90%;
-        top: 75%;
-    }
-
     .sponsor-card {
         padding: 1.5rem;
     }
