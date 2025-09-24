@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\web;
 
+use App\Enums\PostStatus;
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -10,28 +12,28 @@ class HomeController  extends Controller
 {
     public function showMainPage(): Response
     {
-//        $news = Post::with(['postFile.file'])
-//            ->where('published', true) // если есть поле published
-//            ->orderBy('created_at', 'desc')
-//            ->limit(6)
-//            ->get()
-//            ->map(function ($post) {
-//                return [
-//                    'id' => $post->id,
-//                    'title' => $post->title,
-//                    'content' => $post->content,
-//                    'author_id' => $post->author_id,
-//                    'post_type_id' => $post->post_type_id,
-//                    'created_at' => $post->created_at->toISOString(),
-//                    'postFile' => $post->postFile->map(function ($postFile) {
-//                        return [
-//                            'file' => [
-//                                'path' => $postFile->file->path
-//                            ]
-//                        ];
-//                    })
-//                ];
-//            });
+        $news = Post::with(['postFile.file'])
+            ->where('status', PostStatus::PUBLISHED)
+            ->orderBy('created_at', 'desc')
+            ->limit(6)
+            ->get()
+            ->map(function ($post) {
+                return [
+                    'id' => $post->id,
+                    'title' => $post->title,
+                    'content' => $post->content,
+                    'author_id' => $post->author_id,
+                    'post_type_id' => $post->post_type_id,
+                    'created_at' => $post->created_at->toISOString(),
+                    'postFile' => $post->postFile->map(function ($postFile) {
+                        return [
+                            'file' => [
+                                'path' => $postFile->file->path
+                            ]
+                        ];
+                    })
+                ];
+            });
 
 
 //        $sponsors = Sponsor::where('active', true) // если есть поле active
@@ -49,7 +51,7 @@ class HomeController  extends Controller
 
         return Inertia::render('Home',[
             'title' => 'Федерация Бурятского Шууд-Тенниса (Быстрого тенниса)',
-            'news' => [],
+            'news' => $news,
             'sponsors' => [],
         ]);
     }
